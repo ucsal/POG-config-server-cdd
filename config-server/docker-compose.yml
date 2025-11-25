@@ -5,16 +5,9 @@ services:
     ports:
       - "8888:8888"
     
-    networks:
-      - cdd-network
-
     healthcheck:
       test: ["CMD", "curl", "-f", "http://config-server:8888/actuator/info"]
       interval: 5s
       timeout: 3s
       retries: 10
       start_period: 10s
-
-networks:
-  cdd-network:
-    external: true
