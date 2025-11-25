@@ -26,3 +26,5 @@ management:
           - encrypt
           - decrypt
           - refresh
+          - health
+          - info
