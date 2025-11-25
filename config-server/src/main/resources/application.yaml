@@ -12,6 +12,8 @@ spring:
           uri: ${ENV_GIT_URI:https://github.com/ucsal/POG-config-repo-cdd}
           default-label: main
           force-pull: ${ENV_FORCE_PULL:true}
+          search-paths:
+            - "*"
 
 encrypt:
   key: ${ENV_ENCRYPTION_KEY:MinhaChaveSecreta123!}
@@ -21,5 +23,6 @@ management:
     web:
       exposure:
         include:
-          encrypt
-          decrypt
+          - encrypt
+          - decrypt
+          - refresh
